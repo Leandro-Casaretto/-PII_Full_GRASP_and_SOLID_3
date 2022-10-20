@@ -1,4 +1,4 @@
-﻿//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
 // <copyright file="Program.cs" company="Universidad Católica del Uruguay">
 // Copyright (c) Programación II. Derechos reservados.
 // </copyright>
@@ -26,9 +26,18 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
 
-            AllInOnePrinter printer = new AllInOnePrinter();
-            printer.PrintRecipe(recipe, Destination.Console);
-            printer.PrintRecipe(recipe, Destination.File);
+
+        IPrinter printer;
+
+        /*Aca construimos a partir de las dos clases que creamos anteriormente. Como aplicamos el patron 
+        de polimorfismo, no tenemos que andar especificando el destino cada vez que queremos imprimir*/ 
+
+            printer = new FilePrinter();   
+            printer.Printer(recipe);
+            printer = new ConsolePrinter();  
+            printer.Printer(recipe);
+
+
         }
 
         private static void PopulateCatalogs()
