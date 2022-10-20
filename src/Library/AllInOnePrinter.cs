@@ -3,7 +3,9 @@
 // Copyright (c) Programación II. Derechos reservados.
 // </copyright>
 //---------------------------------------------------------------------------------
-using System;
+
+
+/*using System;
 using System.IO;
 
 namespace Full_GRASP_And_SOLID.Library
@@ -29,3 +31,9 @@ namespace Full_GRASP_And_SOLID.Library
         }
     }
 }
+*/
+
+/*
+Comentamos / Eliminamos AllInOnePrinter ya que no cumple con el patron SRP. 
+La razón se debe a que esta clase tiene varias responsabilidades.
+*/
